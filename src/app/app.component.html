@@ -1,27 +1,53 @@
 <head>
   <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/14273d579a.js" crossorigin="anonymous"></script>
+  <script
+    src="https://kit.fontawesome.com/14273d579a.js"
+    crossorigin="anonymous"
+  ></script>
   <!-- Font Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+  />
 </head>
-
 
 <div class="bg-info">
   <!--col-.. par defaut col-12 / m-.. margin / p-.. padding / bg-.. color / border-... bord  / gx-..  g-  espacements / offset-md-.. espacements en col
     fw-...  type de font (bold, etc...) / text-... (start, end, center) /
   btn-.. couleur du bouton-->
   <div class="row topBar bg-primary">
-    <app-top></app-top>
-  </div>
-  <div class="row centerPage">
-    <app-nav class="col-2 nav"></app-nav>
-
-      <!-- <app-articles class="row card col-7 article"></app-articles> -->
-      <app-customer  class="row card col-7 customer"></app-customer>
-      <app-cart class="row h60 col-3 cart"></app-cart>
-      <router-outlet></router-outlet>
+    <div class="col-8"><app-top></app-top></div>
+    <div class="col-4 h-20">
+      <ul class="navbar-nav list-group list-group-horizontal rounded-top mx-2">
+        <li class="nav-item list-group-item rounded-top mx-1">
+          <a class="nav-link" routerLink="/articles" href="#">FORMATIONS</a>
+        </li>
+        <li class="nav-item list-group-item rounded-top mx-1">
+          <a class="nav-link" routerLink="/cart" href="#">PANIER</a>
+        </li>
+        <li class="nav-item list-group-item rounded-top mx-1 ">
+          <a class="nav-link " routerLink="/customer" href="#">CLIENT</a>
+        </li>
+      </ul>
     </div>
-    <app-info></app-info>
-
   </div>
 
+  <div class="row centerPage">
+    <!-- <app-nav class="col-2 nav"></app-nav> -->
+    <!-- <app-articles class="row card col-7 article"></app-articles> -->
+    <!-- <ul class="navbar-nav list-group list-group-horizontal rounded-top mx-2">
+  <li class="nav-item list-group-item rounded-top mx-1">
+    <a class="nav-link" routerLink="/articles"  href="#">FORMATIONS</a>
+  </li>
+  <li class="nav-item list-group-item rounded-top mx-1">
+    <a class="nav-link" routerLink="/cart"  href="#">PANIER</a>
+  </li>
+  <li class="nav-item list-group-item rounded-top mx-1">
+    <a class="nav-link" routerLink="/customer"  href="#">CLIENT</a>
+  </li>
+</ul> -->
+    <!-- <app-customer  class="row card col-7 customer"></app-customer>
+      <app-cart class="row h60 col-3 cart"></app-cart> -->
+    <router-outlet></router-outlet>
+  </div>
+</div>
