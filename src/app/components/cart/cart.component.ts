@@ -21,22 +21,13 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     this.cartArticles=this.cartService.cartArticles;
+    this.cartService.restoreCart;
     // this.totalCart=this.getTotal();
     // this.tva=this.tvaCollector();
   }
 
-  storeCart() {
-    localStorage.setItem(this.storageKey, JSON.stringify(this.articles));
-
-  }
-
-  restoreCart() {
-    this.articles = JSON.parse(localStorage.getItem(this.storageKey) || '{}');
-  }
-
   updateCart(){
     this.cartService.updateCart(this.article?.id, this.article?.tempValue);
-    this.storeCart();
       }
 
   getTotal(){

@@ -18,6 +18,7 @@ export class CartService {
   totalCart : number | undefined;
   customer : Customer | undefined;
   targetCustomer : Customer | undefined;
+  storageKey : string = "cartValue";
 
 
   constructor() { }
@@ -41,6 +42,15 @@ updateCart(id:number, quantity:number){
 // this.cartArticles?.push(this.cartArticle);
 // console.log("cartArticle" + this.cartArticle);
 // console.log("cartArticles" + this.cartArticles);
+}
+
+storeCart() {
+  localStorage.setItem(this.storageKey, JSON.stringify(this.articles));
+
+}
+
+restoreCart() {
+  this.articles = JSON.parse(localStorage.getItem(this.storageKey) || '{}');
 }
 
 getTotal(){

@@ -27,7 +27,7 @@ constructor(private cartService : CartService, private router : Router){}
       {id:4,name:"Python",desc: "Formation Python et Django sur 5 jours",price:180,pict:"assets/img/py.png",qty:0, tempValue:0},
       {id:5,name:"JAVA",desc:"Formation de Java SE 8 sur 5 jours",price:240,pict:"assets/img/jv.png",qty:0, tempValue:0}
     ];
-
+    this.cartService.storeCart;
     this.cartService.updateArticles(this.articles)
 
   }
@@ -35,6 +35,7 @@ constructor(private cartService : CartService, private router : Router){}
 
    addToCart(articleId:number, quantity:number){
  this.cartService.updateCart(articleId, quantity);
+ this.cartService.storeCart();
 // this.router.navigateByUrl('cart');
    }
 
