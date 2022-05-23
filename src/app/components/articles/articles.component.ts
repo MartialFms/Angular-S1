@@ -21,11 +21,11 @@ constructor(private cartService : CartService, private router : Router){}
 
   ngOnInit() {
     this.articles = [
-      {id:1,name:"C++",desc:"Formation en C et C++ sur 4 jours",price:120,pict:"assets/img/c.png",qty:0},                 // test 2
-      {id:2,name:"Java Script",desc:"Formation sur Javascript sur 2 jours",price:80,pict:"assets/img/js.png",qty:0},
-      {id:3,name:"PHP",desc:"Formation à Php sur 3 jours",price:100,pict:"assets/img/ph.png",qty:0},
-      {id:4,name:"Python",desc: "Formation Python et Django sur 5 jours",price:180,pict:"assets/img/py.png",qty:0},
-      {id:5,name:"JAVA",desc:"Formation de Java SE 8 sur 5 jours",price:240,pict:"assets/img/jv.png",qty:0}
+      {id:1,name:"C++",desc:"Formation en C et C++ sur 4 jours",price:120,pict:"assets/img/c.png",qty:0, tempValue:0},                 // test 2
+      {id:2,name:"Java Script",desc:"Formation sur Javascript sur 2 jours",price:80,pict:"assets/img/js.png",qty:0, tempValue:0},
+      {id:3,name:"PHP",desc:"Formation à Php sur 3 jours",price:100,pict:"assets/img/ph.png",qty:0, tempValue:0},
+      {id:4,name:"Python",desc: "Formation Python et Django sur 5 jours",price:180,pict:"assets/img/py.png",qty:0, tempValue:0},
+      {id:5,name:"JAVA",desc:"Formation de Java SE 8 sur 5 jours",price:240,pict:"assets/img/jv.png",qty:0, tempValue:0}
     ];
 
     this.cartService.updateArticles(this.articles)
@@ -36,8 +36,6 @@ constructor(private cartService : CartService, private router : Router){}
    addToCart(articleId:number, quantity:number){
  this.cartService.updateCart(articleId, quantity);
 // this.router.navigateByUrl('cart');
-console.log(this.articles);
-console.log(quantity);
    }
 
    changeBtn(){

@@ -38,13 +38,13 @@
                 type="number"
                 class="text-center rounded-pill"
                 style="width: 9em"
-                [(ngModel)]="article.qty"
-                [min]="0"
+                [(ngModel)]="article.tempValue"
+                [min]="article.qty"
                 [ngStyle]="{ color: changeBtn() }"
               />
               <button
                 class="btn btn-white border-secondary btn-md mb-2 shadow fontQty text-white"
-                (click)="addToCart(article.id, article.qty)"
+                (click)="addToCart(article.id, article.tempValue)"
                 [ngStyle]="{ 'background-color': changeBtn() }"
               >
                 {{ changeValue }}

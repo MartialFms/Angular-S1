@@ -30,8 +30,9 @@ export class CustomerComponent implements OnInit {
     this.customer = {id: newId ,lastName:formValue.lastName,firstName:formValue.firstName,adress:formValue.adress,phone:formValue.phone,mail:formValue.mail}
 
     if (this.checkIfCustomer(this.customer)){this.customers.push(this.customer);
-    console.log("Nouveau client ajouté")}
-    else{console.log("Ce mail est déja utilisé")}
+      alert("Nouveau client ajouté")
+    }
+    else{alert("Ce mail est déja utilisé")}
     console.log(this.customers);
   }
 

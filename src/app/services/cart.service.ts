@@ -30,13 +30,17 @@ updateArticles(articles : Article[]){
 }
 
 updateCart(id:number, quantity:number){
-  if (this.articles)
-  {let targetArticle = this.articles.find(item => item.id === id);
-  let cartId = this.cartArticles.length;
-  let targetQuantity = quantity;
-if(targetArticle)
-  this.cartArticle = {id: cartId ,article:targetArticle,quantity:targetQuantity}}
-this.cartArticles.push(this.cartArticle);
+  if (this.articles) this.article = this.articles.find(item => item.id === id);
+  if(this.article){
+    this.article.qty = this.article?.tempValue;
+    this.article.tempValue=0;}
+//   let cartId = this.cartArticles?.length;
+//   let targetQuantity = quantity;
+// if(targetArticle)
+//   this.cartArticle = {id: cartId ,article:targetArticle,quantity:targetQuantity}}
+// this.cartArticles?.push(this.cartArticle);
+// console.log("cartArticle" + this.cartArticle);
+// console.log("cartArticles" + this.cartArticles);
 }
 
 getTotal(){
