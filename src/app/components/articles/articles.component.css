@@ -21,12 +21,24 @@ tr:nth-child(even) {
 }
 
 .hd4{
-  max-width: 55%;
+  max-width: 25%;
 }
 
 .ptop{
   padding-top: 50px;
   margin-bottom: 50px;
+}
+
+.article-card{
+  border-top-left-radius:2em 2em;
+  border-bottom-left-radius:2em 2em;
+}
+
+.article_card{
+  border-top-right-radius:2em 2em;
+  border-bottom-right-radius:2em 2em;
+  padding-right: 3em;
+  vertical-align: middle;
 }
 
 

@@ -24,8 +24,22 @@ export class CustomerComponent implements OnInit {
 
   getCustomer(){}
 
-  onSaveCustomer(customer : Customer){console.log(customer);
-    this.customers.push(this.customer)
+  onSaveCustomer(formValue : Customer){
+    console.log(" ajout de " + this.customer);
+    const newId = this.customers.length+1
+    this.customer = {id: newId ,lastName:formValue.lastName,firstName:formValue.firstName,adress:formValue.adress,phone:formValue.phone,mail:formValue.mail}
+
+    if (this.checkIfCustomer(this.customer)){this.customers.push(this.customer);
+    console.log("Nouveau client ajouté")}
+    else{console.log("Ce mail est déja utilisé")}
+    console.log(this.customers);
+  }
+
+  checkIfCustomer(targetCustomer : Customer){
+    let validate = true;
+    for(let i =0; i < this.customers.length; i++)
+    {if (this.customers[i].mail == targetCustomer.mail) validate = false; }
+    return validate;
   }
 
 

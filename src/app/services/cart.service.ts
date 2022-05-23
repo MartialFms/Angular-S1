@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Article } from '../model/article';
+import { Cart } from '../model/cart';
 import { Customer } from '../model/customer';
 
 @Injectable({
@@ -10,10 +11,13 @@ import { Customer } from '../model/customer';
 
 export class CartService {
 
-  cartArticles!: Article[];
-  article : Article | undefined;
+  cartArticles!: Cart[];
+  cartArticle! : Cart;
+  article! : Article | undefined;
+  articles : Article[] | undefined;
   totalCart : number | undefined;
   customer : Customer | undefined;
+  targetCustomer : Customer | undefined;
 
 
   constructor() { }
@@ -22,22 +26,24 @@ export class CartService {
 
 updateArticles(articles : Article[]){
   console.log(articles);
-  this.cartArticles=articles;
+  this.articles=articles;
 }
 
 updateCart(id:number, quantity:number){
-  // let targetArticle = this.cartArticles.find(item => item.id === id);
-  // if(quantity > 0){targetArticle.qty+=quantity }
-  // else if(quantity < 0){targetArticle.qty+=quantity- }
-  // else{targetArticle.qty=quantity}
-
+  if (this.articles)
+  {let targetArticle = this.articles.find(item => item.id === id);
+  let cartId = this.cartArticles.length;
+  let targetQuantity = quantity;
+if(targetArticle)
+  this.cartArticle = {id: cartId ,article:targetArticle,quantity:targetQuantity}}
+this.cartArticles.push(this.cartArticle);
 }
 
 getTotal(){
   let total = 0;
   for (var i = 0; i < this.cartArticles!.length; i++) {
-      if (this.cartArticles![i].qty) {
-          total += this.cartArticles![i].price*this.cartArticles![i].qty;
+      if (this.cartArticles![i].quantity) {
+          total += this.cartArticles![i].article.price*this.cartArticles![i].quantity;
           this.totalCart = total;
       }
   }
@@ -47,8 +53,15 @@ clearCart(articles:Article[]){
 
 }
 
+// inutilisé pour le moment car probleme de "properties undefined" illisible lors de l'initialisation de la page
 getCustomer(){
-
+    var lastName = this.customer?.lastName;
+    var firstName = this.customer?.firstName;
+    var adress = this.customer?.adress;
+    var phone = this.customer?.phone;
+    var mail = this.customer?.mail;
+    var contact = {"lastName":lastName,"firstName":firstName, "adress":adress,"phone":phone,"mail":mail};
+    return contact;
 }
 }
 

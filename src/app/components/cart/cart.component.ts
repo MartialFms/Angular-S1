@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Article } from 'src/app/model/article';
+import { Cart } from 'src/app/model/cart';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -11,13 +12,15 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartComponent implements OnInit {
   articles : Article[] | undefined;
   article!: Article;
+  cartArticles!: Cart[];
+  cartArticle! : Cart;
   storageKey : string = "cartValue";
   totalCart=0;
   tva!:number;
   constructor(private cartService : CartService, private router : Router) { }
 
   ngOnInit() {
-    this.articles=this.cartService.cartArticles;
+    this.cartArticles=this.cartService.cartArticles;
     this.totalCart=this.getTotal();
     this.tva=this.tvaCollector();
   }

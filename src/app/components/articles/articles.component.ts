@@ -1,7 +1,9 @@
 import { Component, Input, NgModule, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Article } from 'src/app/model/article';
+import { Cart } from 'src/app/model/cart';
 import { CartService } from 'src/app/services/cart.service';
+import { WarningComponent } from '../warning/warning.component';
 
 
 @Component({
@@ -14,6 +16,7 @@ export class ArticlesComponent implements OnInit {
 quantity : number = 0;
 changeValue! : string;
 articles : Article[] | undefined;
+  modalService: any;
 constructor(private cartService : CartService, private router : Router){}
 
   ngOnInit() {
@@ -42,4 +45,12 @@ console.log(quantity);
     if(this.quantity<0){this.changeValue="Retirer du panier!"; return 'red'}
     else {this.changeValue="Ajouter au panier"; return 'green'}
    }
+
+   openModal() {
+    const modalRef = this.modalService.open(WarningComponent, {
+      size: 'xl',
+      centered: true,
+      windowClass: 'dark-modal'
+    });
+  }
 }

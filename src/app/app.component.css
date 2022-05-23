@@ -1,10 +1,22 @@
+@font-face {
+  font-family: "K2";
+  src: url('../assets/font/K2.ttf') format('ttf');
+}
+
 .topBar {
 height: 60px;
 margin-bottom: 10px;
 }
 
+.title {
+  vertical-align: auto;
+  font-family: 'Algerian' , sans-serif;
+  text-decoration : underline;
+
+}
+
+
 .centerPage{
-  height: 600px;
 }
 
 .article{

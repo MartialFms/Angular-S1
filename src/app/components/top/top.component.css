@@ -1,3 +1,6 @@
 .hd4{
-  max-width: 25%;
+  max-width: 45%;
+  margin-left: 2em;
+  justify-content: end;
+
 }

@@ -6,7 +6,7 @@ import { TopComponent } from './components/top/top.component';
 import { NavComponent } from './components/nav/nav.component';
 import { InfoComponent } from './components/info/info.component';
 import { UserComponent } from './components/user/user.component';
-import { CustomerComponent } from './customer/customer/customer.component';
+import { CustomerComponent } from './components/customer/customer.component';
 import { NotFoundError } from 'rxjs';
 import { ArticlesComponent } from './components/articles/articles.component';
 

@@ -11,7 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UserComponent } from './components/user/user.component';
-import { CustomerComponent } from './customer/customer/customer.component';
+import { CustomerComponent } from './components/customer/customer.component';
+import { WarningComponent } from './components/warning/warning.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CustomerComponent } from './customer/customer/customer.component';
     TopComponent,
     NavComponent,
     UserComponent,
-    CustomerComponent
+    CustomerComponent,
+    WarningComponent
   ],
   imports: [
     BrowserModule,
