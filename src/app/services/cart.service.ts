@@ -51,6 +51,7 @@ storeCart() {
 
 restoreCart() {
   this.articles = JSON.parse(localStorage.getItem(this.storageKey) || '{}');
+  return this.articles
 }
 
 getTotal(){

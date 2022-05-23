@@ -21,13 +21,14 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     this.cartArticles=this.cartService.cartArticles;
-    this.cartService.restoreCart;
+    this.articles= this.cartService.restoreCart();
     // this.totalCart=this.getTotal();
     // this.tva=this.tvaCollector();
   }
 
   updateCart(){
     this.cartService.updateCart(this.article?.id, this.article?.tempValue);
+    this.articles= this.cartService.restoreCart();
       }
 
   getTotal(){
